@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Friska Fikianti — Portfolio</title>
+  <meta name="description" content="Portfolio Friska Fikianti — Web Developer | Projects | Contact" />
+  <link rel="icon" href="data:," />
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Small custom styles for nicer touches */
+    .glass { background: rgba(255,255,255,0.6); backdrop-filter: blur(6px); }
+    .accent { color: #0ea5a4; }
+    .accent-bg { background: linear-gradient(90deg,#06b6d4, #0ea5a4); }
+    .project-image { aspect-ratio: 16/9; object-fit: cover; }
+    /* Simple focus ring for accessibility */
+    .focus-ring:focus { outline: 3px solid rgba(14,165,164,0.25); outline-offset: 2px; }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-gray-50 to-white text-gray-800 antialiased">
+  <!-- Wrapper -->
+  <div class="min-h-screen flex flex-col">
+
+    <!-- NAVBAR -->
+    <nav class="w-full p-4 flex items-center justify-between max-w-5xl mx-auto">
+      <a href="#hero" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full overflow-hidden shadow-lg">
+          <img src="assets/images/friska.jpeg" alt="Foto Profil" class="w-full h-full object-cover">
+        </div>
+        <div>
+          <div class="text-lg font-bold">Friska Fikianti</div>
+          <div class="text-xs text-gray-500">Web Developer • Fresh Graduate Teknik Informatika</div>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-3">
+        <a href="#projects" class="text-sm hover:underline">Projects</a>
+        <a href="#certificate" class="text-sm hover:underline">Certificate</a>
+        <a href="#about" class="text-sm hover:underline">About</a>
+        <a href="#contact" class="text-sm hover:underline">Contact</a>
+        <button id="themeBtn" class="ml-2 p-2 rounded-md focus-ring" aria-label="Toggle dark mode">🌙</button>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header id="hero" class="max-w-5xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center gap-8">
+      <div class="flex-1">
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight"><span class="accent">Friska Fikianti</span><br class="hidden md:inline">Merupakaan seorang Fullstack Developer.</h1>
+        <p class="mt-4 text-gray-600">Saya fokus pada pengembangan aplikasi web menggunakan Laravel, React, dan beberapa aplikasi mobile dan desktop. Di bawah ini contoh proyek yang pernah saya kerjakan.</p>
+
+        <div class="mt-6 flex gap-3">
+          <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 rounded-md accent-bg text-white font-medium shadow hover:opacity-95">Hubungi Saya</a>
+          <a href="#projects" class="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-gray-200 hover:bg-gray-50">Lihat Proyek</a>
+        </div>
+
+        <div class="mt-6 flex gap-3 items-center text-sm text-gray-600">
+          <div class="flex items-center gap-2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="opacity-80" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L15 9H9L12 2Z" fill="currentColor"/></svg>
+            <span>Lokasi: Purbalingga, Jawa Tengah, Indonesia</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="opacity-80" xmlns="http://www.w3.org/2000/svg"><path d="M3 8L12 3L21 8V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V8Z" fill="currentColor"/></svg>
+            <span>Freelance • Open to opportunities</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full md:w-1/3">
+        <div class="glass rounded-2xl p-4 shadow-lg">
+          <img src="assets/images/friska1.jpeg" alt="Foto Profil" class="w-full rounded-lg object-cover project-image">
+          <div class="mt-4">
+            <div class="text-sm text-gray-500">Skills</div>
+            <div class="mt-2 flex flex-wrap gap-2">
+              <span class="text-xs px-3 py-1 rounded-full bg-gray-100">Laravel</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-gray-100">PHP</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-gray-100">Javascript</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-gray-100">CSS</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-gray-100">Bootstrap</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-gray-100">MySQL</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-gray-100">Java</span>
+              <span class="text-xs px-3 py-1 rounded-full bg-gray-100">Flutter</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- PROJECT -->
+    <main class="max-w-5xl mx-auto px-6 pb-12">
+      <section id="project" class="mt-6">
+        <div class="flex items-center justify-between">
+          <h2 class="text-2xl font-bold">Proyek</h2>
+          <div class="text-sm text-gray-500">Total: <span id="projectCount">3</span></div>
+        </div>
+
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6" id="projectsGrid">
+          <!-- Project Card (repeatable) -->
+          <article class="bg-white rounded-xl shadow p-4 group">
+            <img src="assets/images/ecommerce.png" alt="E-Commerce" class="w-full h-40 rounded-md object-cover project-image">
+            <h3 class="mt-3 text-lg font-semibold">E-Commerce Toko Mbak Lis</h3>
+            <p class="text-sm text-gray-600 mt-1">Toko online dengan fitur keranjang, checkout terintegrasi Midtrans, dan verifikasi email.</p>
+            <div class="mt-3 flex items-center justify-between">
+              <div class="text-xs text-gray-500">Laravel • MySQL • Midtrans</div>
+              <div class="flex gap-2">
+                <a href="#" class="text-sm text-blue-600 hover:underline">Demo</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Repo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-xl shadow p-4 group">
+            <img src="assets/images/dessert.png" alt="Dessert" class="w-full h-40 rounded-md object-cover project-image">
+            <h3 class="mt-3 text-lg font-semibold">Website Dessert by Salaras</h3>
+            <p class="text-sm text-gray-600 mt-1">Website informasi penjualan dan promo dessert by salaras.</p>
+            <div class="mt-3 flex items-center justify-between">
+              <div class="text-xs text-gray-500">HTML • Bootstrap • JS • JQuery</div>
+              <div class="flex gap-2">
+                <a href="#" class="text-sm text-blue-600 hover:underline">Dokumentasi</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Repo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-xl shadow p-4 group">
+            <img src="assets/images/tour.png" alt="Tour Travel" class="w-full h-40 rounded-md object-cover project-image">
+            <h3 class="mt-3 text-lg font-semibold">Aplikasi Tour Travel</h3>
+            <p class="text-sm text-gray-600 mt-1">Aplikasi Tour Travel berbasis Desktop.</p>
+            <div class="mt-3 flex items-center justify-between">
+              <div class="text-xs text-gray-500">Pemrograman Berorientasi Objek dengan Java</div>
+              <div class="flex gap-2">
+                <a href="#" class="text-sm text-blue-600 hover:underline">Dokumentasi</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Repo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-xl shadow p-4 group">
+            <img src="assets/images/bouqet.png" alt="Bouqet" class="w-full h-40 rounded-md object-cover project-image">
+            <h3 class="mt-3 text-lg font-semibold">Website Gift Bouqet</h3>
+            <p class="text-sm text-gray-600 mt-1">Website Informasi Penjualan Toko Bunga.</p>
+            <div class="mt-3 flex items-center justify-between">
+              <div class="text-xs text-gray-500">>HTML • CSS • Bootstrap • JS</div>
+              <div class="flex gap-2">
+                <a href="#" class="text-sm text-blue-600 hover:underline">Dokumentasi</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Repo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-xl shadow p-4 group">
+            <img src="assets/images/porto.png" alt="Portfolio" class="w-full h-40 rounded-md object-cover project-image">
+            <h3 class="mt-3 text-lg font-semibold">Portfolio Website (this site)</h3>
+            <p class="text-sm text-gray-600 mt-1">Website portfolio statis, responsif, dan mudah di-deploy (HTML + Tailwind).</p>
+            <div class="mt-3 flex items-center justify-between">
+              <div class="text-xs text-gray-500">HTML • Tailwind</div>
+              <div class="flex gap-2">
+                <a href="#" class="text-sm text-blue-600 hover:underline">Live</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Repo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-xl shadow p-4 group">
+            <img src="assets/images/notepad.png" alt="notepad" class="w-full h-40 rounded-md object-cover project-image">
+            <h3 class="mt-3 text-lg font-semibold">Aplikasi Notepad</h3>
+            <p class="text-sm text-gray-600 mt-1">Aplikasi pencatatan notes.</p>
+            <div class="mt-3 flex items-center justify-between">
+              <div class="text-xs text-gray-500">Flutter</div>
+              <div class="flex gap-2">
+                <a href="#" class="text-sm text-blue-600 hover:underline">Dokumentasi</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Repo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-xl shadow p-4 group">
+            <img src="assets/images/perpus.jpeg" alt="perpus" class="w-full h-40 rounded-md object-cover project-image">
+            <h3 class="mt-3 text-lg font-semibold">Aplikasi Perpustakaan</h3>
+            <p class="text-sm text-gray-600 mt-1">Aplikasi Peminjaman Perpustakaan berbasis Mobile.</p>
+            <div class="mt-3 flex items-center justify-between">
+              <div class="text-xs text-gray-500">Kotlin</div>
+              <div class="flex gap-2">
+                <a href="#" class="text-sm text-blue-600 hover:underline">Dokumentasi</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Repo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-xl shadow p-4 group">
+            <img src="assets/images/notepad2.png" alt="notepad" class="w-full h-40 rounded-md object-cover project-image">
+            <h3 class="mt-3 text-lg font-semibold">Aplikasi Simple Notepad</h3>
+            <p class="text-sm text-gray-600 mt-1">Aplikasi pencatatan dengan design simple.</p>
+            <div class="mt-3 flex items-center justify-between">
+              <div class="text-xs text-gray-500">Flutter</div>
+              <div class="flex gap-2">
+                <a href="#" class="text-sm text-blue-600 hover:underline">Dokumentasi</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Repo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-xl shadow p-4 group">
+            <img src="assets/images/toko-buku.png" alt="BUKU" class="w-full h-40 rounded-md object-cover project-image">
+            <h3 class="mt-3 text-lg font-semibold">Website Toko Buku</h3>
+            <p class="text-sm text-gray-600 mt-1">Website Toko Buku Rakyat.</p>
+            <div class="mt-3 flex items-center justify-between">
+              <div class="text-xs text-gray-500">HTML • CSS • PHP</div>
+              <div class="flex gap-2">
+                <a href="#" class="text-sm text-blue-600 hover:underline">Dokumentasi</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Repo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-xl shadow p-4 group">
+            <img src="assets/images/pendaftaran.png" alt="pendaftaran" class="w-full h-40 rounded-md object-cover project-image">
+            <h3 class="mt-3 text-lg font-semibold">Website Pendaftaran Mahasiswa Baru</h3>
+            <p class="text-sm text-gray-600 mt-1"> Pendaftaran Mahasiswa Baru dengan CRUD.</p>
+            <div class="mt-3 flex items-center justify-between">
+              <div class="text-xs text-gray-500">HTML • CSS • PHP</div>
+              <div class="flex gap-2">
+                <a href="#" class="text-sm text-blue-600 hover:underline">Dokumentasi</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Repo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-xl shadow p-4 group">
+            <img src="assets/images/porto2.png" alt="porto" class="w-full h-40 rounded-md object-cover project-image">
+            <h3 class="mt-3 text-lg font-semibold">Website Portofolio</h3>
+            <p class="text-sm text-gray-600 mt-1"> Websie Portofolio Sederhana.</p>
+            <div class="mt-3 flex items-center justify-between">
+              <div class="text-xs text-gray-500">HTML • CSS • Bootstrap</div>
+              <div class="flex gap-2">
+                <a href="#" class="text-sm text-blue-600 hover:underline">Dokumentasi</a>
+                <a href="#" class="text-sm text-gray-600 hover:underline">Repo</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- CERTIFICATE -->
+      <!-- <main class="max-w-5xl mx-auto px-6 pb-12"> -->
+      <section id="certificate" class="mt-12">
+        <div class="flex items-center justify-between">
+          <h2 class="text-2xl font-bold">Sertifikat</h2>
+          <div class="text-sm text-gray-500">Total: <span id="projectCounts">3</span></div>
+        </div>
+
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6" id="projectsGrids">
+          <!-- Project Card (repeatable) -->
+          <article class="bg-white rounded-xl shadow p-4 group">
+            <img src="assets/images/sklivul.jpeg" alt="skilvul" class="w-full h-40 rounded-md object-cover project-image">
+            <h3 class="mt-3 text-lg font-semibold">Skilvul Certificate</h3>
+            <p class="text-sm text-gray-600 mt-1">HTML, CSS, dan Javascript</p>
+          </article>
+
+          <article class="bg-white rounded-xl shadow p-4 group">
+            <img src="assets/images/kamjar.jpeg" alt="kamjar" class="w-full h-40 rounded-md object-cover project-image">
+            <h3 class="mt-3 text-lg font-semibold">Kampus Mengajar 6</h3>
+            <p class="text-sm text-gray-600 mt-1">Peserta Kampus Mengajar 6 SMKS YPT 2 Purbalingga</p>
+          </article>
+
+          <article class="bg-white rounded-xl shadow p-4 group">
+            <img src="assets/images/msib.jpeg" alt="msib" class="w-full h-40 rounded-md object-cover project-image">
+            <h3 class="mt-3 text-lg font-semibold">MSIB 6</h3>
+            <p class="text-sm text-gray-600 mt-1">Peserta MSIB 6 Web Fullstact di Gamelab</p>
+          </article>
+
+          <article class="bg-white rounded-xl shadow p-4 group">
+            <img src="assets/images/bestcom.jpeg" alt="bestcom" class="w-full h-40 rounded-md object-cover project-image">
+            <h3 class="mt-3 text-lg font-semibold">Best E-commerce Project</h3>
+            <p class="text-sm text-gray-600 mt-1">Penghargaan Best E-commerce Project.</p>
+          </article>
+
+          <article class="bg-white rounded-xl shadow p-4 group">
+            <img src="assets/images/revo1.jpeg" alt="revo" class="w-full h-40 rounded-md object-cover project-image">
+            <h3 class="mt-3 text-lg font-semibold">Minicourse Software Enginering</h3>
+            <p class="text-sm text-gray-600 mt-1">Software Engnering Revou</p>
+          </article>
+
+          <article class="bg-white rounded-xl shadow p-4 group">
+            <img src="assets/images/revo2.jpeg" alt="revo" class="w-full h-40 rounded-md object-cover project-image">
+            <h3 class="mt-3 text-lg font-semibold">Minicourse Data Analytics</h3>
+            <p class="text-sm text-gray-600 mt-1">Data Analytics Revou.</p>
+          </article>
+        </div>
+        </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="mt-12">
+        <h2 class="text-2xl font-bold">Tentang Saya</h2>
+        <div class="mt-4 text-gray-600 max-w-3xl">
+          <p>Saya mahasiswa Informatika yang menyukai pengembangan web full-stack. Saya lebih sering bekerja dengan Laravel untuk backend dan React/Tailwind untuk frontend.</p>
+          <ul class="mt-3 list-disc ml-5 text-sm text-gray-600">
+            <li>Berpengalaman membuat e-commerce dengan integrasi pembayaran midtrans, keranjang belanja, review, dll.</li>
+            <li>Menguasai Git, deployment ke GitHub Pages dan layanan hosting.</li>
+            <li>Berpengalaman mengajar dalam program Kampus Mengajar di SMKS YPT 2 Purbalingga.</li>
+            <li>Berpengalaman dalam program Magang dan Studi Independen Bersertifikat di PT Educa Sisfomedia Indonesia (Gamelab).</li>
+            <li>Berpengalaman kerja sebagai Admin Keuangan dan Inventory di CV Hana Makmur Purbalingga.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="mt-12">
+        <h2 class="text-2xl font-bold">Kontak</h2>
+        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 shadow">
+            <h3 class="font-semibold">Informasi Kontak</h3>
+            <p class="mt-2 text-sm text-gray-600">Email: <span id="emailText" class="font-medium">friska.fikianti@gmail.com</span> <button id="copyBtn" class="ml-2 text-xs px-2 py-1 border rounded focus-ring">Salin</button></p>
+            <p class="mt-2 text-sm text-gray-600">WhatsApp: <a href="https://wa.me/6281911641430" target="_blank" class="text-blue-600">+62 819-1164-1430</a></p>
+            <div class="mt-4 flex gap-3">
+              <a href="https://github.com/friskafikianti" target="_blank" class="text-sm border px-3 py-2 rounded hover:bg-gray-50">GitHub</a>
+              <a href="https://www.linkedin.com/in/friska-fikianti-9052661a7" target="_blank" class="text-sm border px-3 py-2 rounded hover:bg-gray-50">LinkedIn</a>
+            </div>
+          </div>
+
+          <!-- <form id="contactForm" class="bg-white rounded-xl p-6 shadow">
+            <h3 class="font-semibold">Kirim Pesan</h3>
+            <label class="block mt-3 text-sm">Nama
+              <input required name="name" class="mt-1 w-full p-2 border rounded focus-ring" />
+            </label>
+            <label class="block mt-3 text-sm">Email
+              <input required name="email" type="email" class="mt-1 w-full p-2 border rounded focus-ring" />
+            </label>
+            <label class="block mt-3 text-sm">Pesan
+              <textarea required name="message" rows="4" class="mt-1 w-full p-2 border rounded focus-ring"></textarea>
+            </label>
+            <div class="mt-4">
+              <button type="submit" class="px-4 py-2 rounded-md accent-bg text-white">Kirim</button>
+            </div>
+            <p id="formNote" class="text-xs text-gray-500 mt-2"></p>
+          </form> -->
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="mt-12 mb-8 text-center text-sm text-gray-500">
+        <div>© <span id="year"></span> Friska Fikianti — Dibuat dengan ❤️</div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Modal untuk project detail (simple) -->
+  <div id="modal" class="fixed inset-0 bg-black/40 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-xl max-w-3xl w-full p-6 shadow-lg">
+      <button id="closeModal" class="ml-auto mb-4 p-2 rounded focus-ring">Tutup</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script>
+    // Small JS interactions
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Copy email
+    document.getElementById('copyBtn').addEventListener('click', async () => {
+      const text = document.getElementById('emailText').textContent;
+      try {
+        await navigator.clipboard.writeText(text);
+        alert('Email disalin ke clipboard');
+      } catch (e) {
+        prompt('Salin manual:', text);
+      }
+    });
+
+    // Contact form -> mailto fallback
+    function submitForm(e) {
+      e.preventDefault();
+      const f = e.target;
+      const name = encodeURIComponent(f.name.value);
+      const email = encodeURIComponent(f.email.value);
+      const message = encodeURIComponent(f.message.value);
+      const subject = encodeURIComponent('Pesan dari website portfolio - ' + f.name.value);
+      const body = encodeURIComponent('Nama: ' + f.name.value + '\nEmail: ' + f.email.value + '\n\n' + f.message.value);
+      window.location.href = `mailto:friska.fikianti@gmail.com?subject=${subject}&body=${body}`;
+      return false;
+    }
+
+    // Theme toggle (light/dark)
+    const themeBtn = document.getElementById('themeBtn');
+    const root = document.documentElement;
+    function setDark(dark) {
+      if (dark) {
+        document.documentElement.classList.add('dark');
+        document.body.classList.add('bg-gray-900');
+        document.body.classList.add('text-gray-100');
+        themeBtn.textContent = '☀️';
+      } else {
+        document.documentElement.classList.remove('dark');
+        document.body.classList.remove('bg-gray-900');
+        document.body.classList.remove('text-gray-100');
+        themeBtn.textContent = '🌙';
+      }
+      localStorage.setItem('dark', dark ? '1' : '0');
+    }
+    themeBtn.addEventListener('click', () => setDark(localStorage.getItem('dark') !== '1'));
+    if (localStorage.getItem('dark') === '1') setDark(true);
+
+    // Modal demo for projects (click card to open)
+    document.querySelectorAll('#projectsGrid article').forEach((card, i) => {
+      card.addEventListener('click', () => {
+        const title = card.querySelector('h3').textContent;
+        const desc = card.querySelector('p').textContent;
+        const tech = card.querySelector('div.text-xs').textContent;
+        document.getElementById('modalContent').innerHTML = `
+          <h3 class="text-xl font-bold">${title}</h3>
+          <p class="mt-2 text-gray-600">${desc}</p>
+          <p class="mt-3 text-sm text-gray-500">Teknologi: ${tech}</p>
+        `;
+        document.getElementById('modal').classList.remove('hidden');
+        document.getElementById('modal').classList.add('flex');
+      });
+    });
+    document.getElementById('closeModal').addEventListener('click', () => {
+      document.getElementById('modal').classList.add('hidden');
+      document.getElementById('modal').classList.remove('flex');
+    });
+
+    // Count projects
+    document.getElementById('projectCount').textContent = document.querySelectorAll('#projectsGrid article').length;
+    document.getElementById('projectCounts').textContent = document.querySelectorAll('#projectsGrids article').length;
+  </script>
+
+  <!-- email -->
+   <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const status = urlParams.get("status");
+    const msg = urlParams.get("msg");
+
+    if (status && msg) {
+        const notif = document.createElement("div");
+        notif.textContent = decodeURIComponent(msg);
+        notif.style.padding = "10px";
+        notif.style.margin = "10px 0";
+        notif.style.borderRadius = "5px";
+        notif.style.color = "#fff";
+        notif.style.fontWeight = "bold";
+        notif.style.textAlign = "center";
+        notif.style.backgroundColor = status === "success" ? "#4CAF50" : "#f44336";
+        document.body.prepend(notif);
+
+        setTimeout(() => notif.remove(), 5000);
+    }
+});
+</script>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const formData = new FormData(this);
+
+  const res = await fetch('send_email.php', {
+    method: 'POST',
+    body: formData
+  });
+  const data = await res.json();
+
+  if (data.status === "success") {
+    alert("Pesan berhasil dikirim!");
+    this.reset();
+  } else {
+    alert("Gagal mengirim: " + data.message);
+  }
+});
+</script>
+</body>
+</html>
